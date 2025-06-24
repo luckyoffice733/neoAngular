@@ -1,0 +1,562 @@
+1)Which command is used to create a new Angular project?
+(a) ng new my-app
+(b) angular create my-app
+(c) ng generate project my-app
+(d) npm init angular my-app
+
+Answer: (a) 
+
+2)Which of the following is a key feature? introduced in Angular 14?
+A) Standalone components
+B) Zone-less change detection
+C) Optional NgModules
+D) routing
+
+Answer:A
+
+3)Which command is used to generate a new component in Angular CLI?
+A) ng new component
+B) ng generate component
+C) ng add component
+D) ng create component
+
+Answer:B
+
+4)Which file is used to configure project-specific settings in an Angular project?
+A) package.json
+B) tsconfig.json
+C) angular.json
+D) app.module.ts
+
+Answer:C
+
+5)What is a Single-Page Application (SPA)?
+a) An application that loads all content on a single HTML page.
+b) An application with multiple pages that reload on navigation.
+c) A server-side rendered application.
+d) An application that uses only CSS and HTML.
+Answer: a
+
+6)What is the purpose of the @Input decorator
+A) To define output properties
+B) To receive data from a parent component
+C) To declare a component
+D) To define a service
+
+Answer:B
+
+7)What does the ngFor directive do?
+A) Binds data to a form
+B) Iterates over a collection and creates an element for each item
+C) Conditionally renders elements
+D) Triggers events
+
+Answer:B
+
+8)What is the correct syntax for a two-way data binding in Angular
+A) [value]=”model”
+B) (input)=”updateValue($event)”
+C) [(ngModel)]=”model”
+D) {ngModel}=model
+
+Answer:C
+
+9)What does the following code do
+
+@Component({
+  selector: 'app-root',
+  template: '<h1>{{ title }}</h1>'
+})
+export class AppComponent {
+  title = 'Hello, Angular!'
+}
+
+A) Displays ‘Hello, Angular!’ in an <h1> tag
+B) Displays ‘app-root’ in an <h1> tag
+C) Displays an error
+D) Displays Nothing
+
+Answer:A
+ 
+10)Which decorator is used to emit events from a child component to a parent component?
+(a) @Input
+(b) @Output
+(c) @HostListener
+(d) @HostBinding
+
+Answer: b
+
+11)What is the purpose of the ngIf directive?
+a) To conditionally render elements based on a boolean expression.
+b) To iterate over a collection of items.
+c) To apply styles dynamically to elements.
+d) To handle form submission. 
+
+Answer: a
+
+12)Which command is used to serve an Angular application locally for development?
+A)ng serve
+B)ng start
+C)ng run
+D)ng develop
+
+Answer: A
+
+13)What is the purpose of the @Component decorator in Angular?
+A)To define a service
+B)To declare a class as an Angular component
+C)To configure routing
+D)To create a directive
+
+Answer: B
+
+14)What does the following Angular template syntax do:
+<p>{{message}}</p>?
+
+A)Displays a static message
+B)Binds to a property called 'message' in the component
+C)Creates a message variable
+D)Links to an external message
+
+Answer: B
+
+15)Given the Angular syntax 
+<button (click)="save()">save</button>
+what does (click) represent?
+
+A)A directive
+B)A data binding
+C)An event binding
+D)A property binding
+
+Answer: C
+
+16)What is the correct syntax for defining an input property in an Angular component?
+a) @Input() prop: string;
+b) @Output() prop: string;
+c) @Prop() input: string;
+d) @Receive() prop: string
+
+Answer: a
+
+17)How do you capture a reference to a DOM element in Angular?
+a) Using the @ViewChild decorator
+b) Using the @ContentChild decorator
+c) Using the @ElementRef decorator
+d) Using the @CaptureRef decorator
+
+Answer: c
+
+18)With the following component class, what template syntax would you use in the template to display the value of the title class field?
+@Component({
+  selector: 'app-title-card',
+  template: '',
+})
+class TitleCardComponent {
+  title = 'User Data';
+}
+
+A){{ 'title' }}
+B){{ title }}
+C) [title]
+D) A class field cannot be displayed in a template via the template syntax.
+
+Answer: B
+
+19)How can you disable the submit button when the form has errors in this template-driven forms example?
+<form #userForm="ngForm">
+  <input type="text" ngModel name="firstName" required />
+  <input type="text" ngModel name="lastName" required />
+  <button (click)="submit(userForm.value)">Save</button>
+</form>
+
+A)<button (click)="submit(userForm.value)" disable="userForm.invalid">Save</button>
+B)<button (click)="submit(userForm.value)" [disabled]="userForm.invalid">Save</button>
+C)<button (click)="submit(userForm.value)" [ngForm.disabled]="userForm.valid">Save</button>
+D)<button (click)="submit(userForm.value)" *ngIf="userForm.valid">Save</button>
+
+Answer: B 
+
+20)With the following reactive form markup, what would you add to wire up a call to an onSubmit class method?
+<form [formGroup]="form">
+  <input type="text" formControlName="username" />
+  <button type="submit" [disabled]="form. invalid">Submit</button>
+</form>
+
+A)neither of these answers
+B)Add (click)="onSubmit()" to the <button> element.
+C)Add (ngSubmit )="onSubmit ()" to the <form> element.
+D)both of these answers
+
+Answer: C 
+
+21)Which answer best explains the usage of ngModel in this template code?
+<input [(ngModel)]="user.name" />
+
+A)It is conditionally displaying the input element if the user.name property has a value.
+B)It is the two-way data binding syntax. The input element value property will be bound to the user.name property, and the value change event for the form element will update the user.name property value.
+C)There is a typo in the code. It should have only the square brackets.
+D)It is binding the value of the user.name property to the input element's val property to set its initial value.
+
+Answer: B
+
+22)What method is used to wire up a FormControl to a native DOM input element in reactive forms?
+
+A)Use the string name given to the FormControl as the value for the DOM element id attribute.
+B)Use the formControlName directive and set the value equal to the string name given to the FormControl.
+C)Add the string name given to the FormControl to an attribute named controls on the <form> element to indicate what fields it should include.
+D)Use the square bracket binding syntax around the value attribute on the DOM element and set that equal to an instance of the FormControl.
+
+Answer: B
+
+23)Which module must be imported to use reactive forms in Angular?
+
+A)FormsModule
+B)HttpClientModule
+C)BrowserModule
+D)ReactiveFormsModule
+
+Answer: D
+
+24)In Angular's reactive forms, which class represents a group of FormControls?
+
+A)FormGroup
+B)FormControlArray
+C)FormControl
+D)FormModule
+
+Answer: A
+
+25)How do you create a custom pipe in Angular?
+
+A)Using the @Pipe decorator and implementing the PipeTransform interface
+B)By extending a built-in pipe
+C)By declaring it in a module
+D)Using a service
+
+Answer: A
+
+26)Which decorator is used to make a class a service in Angular? 
+A) @Component
+B) @Directive
+C) @Injectable
+D) @Pipe
+
+Answer: C
+
+27)What is Dependency Injection (DI) in Angular?
+A) A design pattern where a class creates its own dependencies.
+B) A technique for managing routes in an application.
+C) A design pattern that allows an object to receive its dependencies from an external source rather than creating them itself. 
+D) A way to handle events in Angular templates.
+
+Answer: C
+
+28)What is the purpose of services in Angular?
+A) To define the structure and behavior of components.
+B) To encapsulate reusable logic and data that can be shared across components.
+C) To manage the routing and navigation of the application.
+D) To define the appearance of the application.
+
+Answer: B
+
+29)Which of the following is used to define validation rules in reactive forms?
+(a) ngModel
+(b) FormGroup
+(c) Validators
+(d) NgForm
+
+Answer: (c)
+
+30)Based on this route definition, what can be injected into UserDetailComponent constructor to get ahold of the id route parameter?
+{path: 'user/:id', component: UserDetailComponent }
+
+A)ActivatedRoute
+B)CurrentRoute
+C)UrlPath
+D)@Inject('id')
+
+Answer: (A)
+
+31)How would you configure a route definition for a UserDetailComponent that supports the URL path user/23 (where 23 represents the id of the requested user)?
+
+A){ path: 'user/:id', component: UserDetailComponent }
+B){ url: 'user/:id', routedComponent: UserDetailComponent }
+C){ routedPath: 'user/:id', component: UserDetailComponent }
+D){ destination: new UserDetailComponent(), route: 'user/:id' }
+
+Answer: (A)
+
+32)How can you navigate to a specific route programmatically in Angular When click on button?
+(a) Using window.location.href
+(b) Using the navigate method of the Router service
+(c) Using the RouterLink directive in the template
+(d) Using the location.path method
+
+Answer: (b)
+
+33)Which command is used to install Angular CLI globally?
+A. npm install @angular/cli
+B. npm global install @angular/cli
+C. npm install -g @angular/cli
+D. npm --install @angular/cli
+
+Answer: (c)
+
+34)What is the primary purpose of the RouterOutlet directive?
+(a) To define a navigation link
+(b) To display the component associated with the current route
+(c) To configure route guards
+(d) To handle route parameters
+
+Answer: (b)
+
+35)What is the use of patchValue() in Reactive forms?
+A) Updates all form controls
+B) Updates specific form controls
+C) Clears all form controls
+D) Deletes form controls
+
+Answer: (B)
+
+36)____Angular lifecycle hook is called at Once at the time of
+component initialization?
+a)ngOnInit
+b)ngDoCheck
+c)ngOnChanges
+d)ngUpdate
+
+Answer: (A)
+
+37)When any data-bound property of an angular directive changes,____method returns the simpleChanges Object?
+a)ngOnChanges
+b)ngOnInit
+c)ngDoCheck
+d)ngUpdateChange
+
+Answer: (A)
+
+38)A significant lifecycle hook,___protects memory leak on Angular.It triggers when the component is destroyed.
+
+a)ngOnDestroy
+b)ngAfterContentInit
+c)ngOnChanges
+d)ngAfterViewInit
+
+Answer: (a)
+
+39)This lifecycle method is called right after the directive content is checked?
+a)ngOnChanges
+b)ngOnInit
+c)ngAfterContentChecked
+d)ngOnDestroy
+
+Answer: (c)
+
+40)This lifecycle method is triggered right after the component's view is instantiated.
+a)ngOnInit
+b)ngAfterContentInit
+c)ngOnChanges
+d)ngAfterViewInit
+
+Answer: (d)
+
+41)Which module must be imported to use the HttpClient service in Angular?
+(a) FormsModule
+(b) RouterModule
+(c) HttpClientModule
+(d) CommonModule
+
+Answer: (c)
+
+42)What is the primary purpose of the HttpClient service?
+(a) To handle user input
+(b) To manage routing
+(c) To make HTTP requests
+(d) To render templates
+
+Answer: (c)
+
+43)Which HTTP method is used to retrieve data from a server using HttpClient?
+(a) POST
+(b) PUT
+(c) DELETE
+(d) GET
+
+Answer: (d)
+
+44)Which method is typically used to send data to a server to create a new resource?
+(a) GET
+(b) POST
+(c) PUT
+(d) DELETE
+
+Answer: (b)
+
+45)What type of object does HttpClient methods like get() and post() return?
+(a) Promise
+(b) Observable
+(c) Array
+(d) String
+
+Answer: (b)
+
+46)What is the purpose of Http Interceptors in Angular?
+(a) To handle routing
+(b) To transform request or response
+(c) To validate forms
+(d) To manage state
+
+Answer: (b)
+
+47)What is the purpose of JSON.stringify() when working with HttpClient?
+(a) To parse JSON data from a response
+(b) To convert a JavaScript object into a JSON string for sending in a request body
+(c) To validate JSON data
+(d) To format JSON data for display
+
+Answer: (b)
+
+48)How do you typically handle errors when using HttpClient?
+(a) Using try...catch blocks
+(b) Using the .catch() method on the Observable
+(c) Using the error callback in subscribe()
+(d) Both (b) and (c)
+
+Answer: (d)
+
+49)Which of the following is Not a valid TypeScript data type?
+a)void
+b)any
+c)dynamic
+d)tuple
+
+Answer: (c)
+
+50)How do you denote a variable as readonly in TypeScript?
+a)readonly
+b)const
+c)static
+d)fixed
+
+Answer: (a)
+
+51)A Getter method returns the value of the property's value
+and called_____?
+a)constructors
+b)Accessor
+c)Default
+d)Union
+
+Answer: (b)
+
+52)A class can reuse the properties and methods of another class. This is called _____ in TypeScript?
+a)Object type
+b)Data type
+c)Inheritance
+d)Interface
+
+Answer: (c)
+
+53)A function type has two parts parameter and ____?
+a) Object type
+b) Value type
+c) Return type
+d) Data type
+
+Answer: (c)
+
+54)The ____ allows you to combine multiple types into one type.
+a)Hide Complexity
+b)Object type
+c)Union type
+d)value type
+
+Answer: (c)
+
+55) TypeScript is a super set of ?
+a)JavaScript
+b)Java
+c)VBScript
+d)Jquery
+
+Answer: (a)
+
+56)How do you specify that a function does not return anything in TypeScript?
+a)function myFunc():undefined
+b)function myFunc():any
+c)function myFunc():never
+d)function myFunc():void
+
+Answer: (d)
+
+57)We have a function below that takes in a varying number of message parameters and outputs them to the console. How can we strongly-type the messages rest parameter so that only string types can be passed?
+
+function outputMessages(...messages) {
+    messages.forEach(message => console.log(message));
+}
+
+a)...messages: any
+b)...messages: any[]
+c)...messages: string
+d)...messages: string[]
+
+Answer: (d)
+
+58)Which of the following is a valid arrow function?
+a)let sum = (x: number, y: number) => x + y;
+b)let sum(): (x: number, y: number):number => x + y;
+c)let sum = (x: number, y: number) => return x + y;
+d)let sum:(x: number, y: number) => x + y;
+
+Answer: (a)
+
+59)How do you create an object from a class in TypeScript?
+a)new object(myClass);
+b)create object myClass;
+c)let obj = new MyClass();
+d)let obj = create(myClass);
+
+Answer: (c)
+
+60)Given the following  code, what is the output?
+class Box {
+
+ width:number;
+
+constructor(width:number) {
+   this.width = width;
+}
+}
+let myBox = new Box(5);
+console.log(myBox.width);
+
+a)0
+b)5
+c)Undefined
+d)NaN
+
+Answer: (b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

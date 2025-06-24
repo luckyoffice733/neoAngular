@@ -1,0 +1,31 @@
+what is SPA?
+
+A Single Page Application (SPA) in Angular is a web application that loads a single HTML page and dynamically updates the content without refreshing the entire page. 
+
+
+
+In Angular, bootstrapping refers to the process of initializing and running an Angular application. It involves loading the root module of the application which mostly is app.module.ts and then compiling and launching the component tree.
+
+In other words when an Angular application is started, the Angular framework reads the main.ts file, which contains the bootstrap code, and it loads the specified module (AppModule). The framework then processes the metadata defined in AppModule and initializes the application accordingly. The main file responsible for bootstrapping an Angular application is typically named main.ts.
+
+When you build an Angular application, the Angular CLI (Command Line Interface) or other build tools generate several files that are included in the index.html file during runtime. 
+
+
+
+or:
+===
+Bootstrapping in Angular
+
+What is a Bootstrapping?
+
+Bootstrapping is the process of initializing or loading our Angular application.
+
+Angular takes the following steps to load our first view.
+
+Loads Index.html
+Loads Angular & Third-party libraries & Application
+Executes application entry point (main.ts)
+Load & execute Root Module (app.module.ts)
+Executes the Root Component (app.component.ts)
+Displayes the template (app.component.html)
+Index.html loads first

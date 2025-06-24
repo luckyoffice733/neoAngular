@@ -1,0 +1,18 @@
+@ViewChild is a decorator in Angular that allows a component to access and interact with a child component, directive, or DOM element from its template. 
+
+It is part of Angular’s Component Interaction pattern and is commonly used when you want to directly access a child component's properties and methods or manipulate a DOM element in your component class.
+
+
+ElementRef:
+------------
+ElementRef is a wrapper around a native DOM element in Angular. It’s commonly used with @ViewChild to access and manipulate DOM elements directly from your component class.
+
+Gives direct access to a native HTML element inside the component template.
+
+Provides a way to perform imperative DOM manipulation (like setting styles, text, or focusing an element).
+
+nativeElement.textContent
+nativeElement.innerHTML
+nativeElement.style.property
+nativeElement.focus()
+

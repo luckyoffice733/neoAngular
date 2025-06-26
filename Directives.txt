@@ -1,0 +1,197 @@
+In Angular, directives are classes that add behavior to elements in your Angular applications. They help manipulate the DOM or extend HTML functionality.
+
+Angular provides three main types of directives:
+
+1. Component Directives
+These are directives with a template.
+
+A component is technically a directive with an associated template.
+
+Example:
+======
+@Component({
+  selector: 'app-my-component',
+  template: `<h1>Hello from MyComponent</h1>`
+})
+export class MyComponent {}
+
+2. Structural Directives
+Change the DOM layout by adding or removing elements.
+
+Typically use the * prefix (syntactic sugar).
+
+Common Structural Directives:
+=============================
+
+*ngIf – conditionally includes a template.
+
+Note:
+-----
+The “ng-template” is a container, inside which you can place any no. of tags. 
+
+Use “ngIf and else”, if you want to display one content for the “true” case, another content fir the “false” 
+case.
+
+
+*ngFor – repeats a template for each item in a list.
+
+Note:
+-----
+It is used to repeat the tag once for each element in the array. It generates (repeats) the give content once 
+for one element of the array. For example, you are reading friends names from an array and displaying the same as a bulleted list. 
+
+We have to prefix “*” before ”ngFor”, as it is the micro syntax. The “micro syntax” means, it’s not just a value; 
+we can write some complex code in it. 
+arrayname = [ value1, value2, … ]; 
+• Ex: Displaying proucts list in the online shopping website. 
+• Use “ngFor” to display list of records. Ex: List of banks, list of salesman and their 
+sales etc. 
+
+Syntax: 
+---------
+<tag *ngFor=”let variable of arrayname”> 
+</tag> 
+
+Add and Remove:
+===============
+ngFor with Add, Remove 
+• We can allow the user to add new records (objects) to existing array. The user can also delete existing 
+records. 
+• We use “push” function to add new object to array. 
+• We use “splice” function to remove existing object from the array. 
+Steps: 
+• Adding element to array: 
+arrayvariable.push(value); 
+• Removing element from array: 
+arrayvariable.splice(index, count); 
+
+
+
+Searching and sorting:
+----------------------
+ngFor with Searching and Sorting 
+• We can search for some content in the array. 
+• We can allow the user to sort the data based on a specific property. 
+Steps: 
+• We use “filter” function to search content. The filter function receives a callback function, which gets 
+executed once for each item in the array, in the sequence. If the callback function returns “true”, the item 
+will be kept; if it returns “false”, the item will be skipped; thus it collects all the items that has “true”, forms 
+an array with those elements and returns the new array. 
+• We use “sort” function to sort data. The sort function receives a callback function, which gets called for each 
+pair of items in the list. We should return an integer (either negative, 0, or positive). If negative number is 
+returned, the item1 comes first. If the “0” is returned, no changes will be done; original order of items will 
+be kept as it is. If positive number is returned, item2 comes first, item1 is next. 
+
+• Searching: 
+arryname.filter((item) => { return true or false; } ); 
+
+• Sorting: 
+arrayname.sort( 
+(item1, item2) => 
+{
+if (item1 is less than item2) 
+return -1; 
+else if (item1 > item2) 
+return 1; 
+else 
+return 0; 
+} 
+) 
+
+
+
+*ngSwitch – switches among views.
+===================================
+Example:
+
+html
+Copy
+Edit
+<div *ngIf="isLoggedIn">Welcome back!</div>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+3. Attribute Directives
+==========================
+Attribute directives change the appearance or behavior of an element, component, or another directive. Unlike structural directives (which add or remove DOM elements), attribute directives only modify the element they are attached to.
+
+
+Built-in Attribute Directives:
+
+ngClass – add/remove CSS classes.
+----------------------------------
+ngClass is an Angular directive used for dynamically adding or removing CSS classes from an HTML element. It provides a powerful way to control the styling of elements based on component logic or data.
+
+ngClass can accept values:
+String: A space-delimited string of class names to be applied.
+
+    <div [ngClass]="'class1 class2'">...</div>
+
+Object: An object where keys are class names and values are boolean expressions. If the expression evaluates to true, the corresponding class is added; otherwise, it is removed. 
+
+    <div [ngClass]="{'active': isActive, 'highlight': isHighlighted}">...</div>
+
+
+
+ngStyle – set inline styles dynamically.
+========================================
+ngStyle is an Angular attribute directive used to apply inline CSS styles to an HTML element dynamically. It allows you to set one or more style properties based on an expression that evaluates at runtime, providing flexibility in controlling the visual presentation of elements.
+
+Key aspects of ngStyle:
+
+Syntax: ngStyle accepts an object literal where keys represent CSS style property names and values are the corresponding style values. 
+Code:
+
+    <div [ngStyle]="{'background-color': 'blue', 'font-size': '16px'}">
+        Styled with ngStyle
+    </div>
+Dynamic Styling: The values assigned to style properties can be expressions or component properties, enabling dynamic style changes based on data or component state.
+TypeScript
+
+    // In your component.ts
+    backgroundColor = 'green';
+    fontSize = '20px';
+Code:
+
+    <!-- In your template.html -->
+    <div [ngStyle]="{'background-color': backgroundColor, 'font-size': fontSize}">
+        Dynamic Styling
+    </div>
+
+
+
+ngModel – two-way binding.
+===========================
+ngModel in Angular is a directive that enables two-way data binding for HTML form elements like <input>, <select>, and <textarea>. It allows for seamless synchronization between the view (the user interface) and the component's data model.
+How it works:
+
+Property Binding ([]):
+ngModel binds the value of the HTML control to a property in your component's class. This means that if the component's property changes, the value displayed in the input field will automatically update.
+
+Event Binding (()):
+ngModel listens for changes in the HTML control (e.g., user typing in an input field). When a change occurs, it updates the corresponding property in your component's class.
+
+Key characteristics:
+
+Two-way synchronization:
+Changes in the view update the model, and changes in the model update the view.
+Part of FormsModule:
+ngModel is not part of Angular's core library; it belongs to the FormsModule. You must import FormsModule into your Angular module (e.g., app.module.ts) to use ngModel.
+Syntax:
+It is used with the "banana in a box" syntax: [(ngModel)]="propertyName".
+
+
+
+
+Custom Attribute Directive Example:
+=====================================
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  constructor(el: ElementRef) {
+    el.nativeElement.style.backgroundColor = 'yellow';
+  }
+}

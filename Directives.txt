@@ -186,6 +186,32 @@ It is used with the "banana in a box" syntax: [(ngModel)]="propertyName".
 
 Custom Attribute Directive Example:
 =====================================
+Creating a Custom Directive:
+
+To create a custom directive, you follow these steps:
+
+Generate the Directive: Use the Angular CLI to generate a new directive:
+    ng generate directive <directive-name>
+
+This creates a TypeScript file with the @Directive() decorator.
+
+Implement the Directive Logic:
+-------------------------------
+In the generated file, define the directive's behavior within the class. You can inject ElementRef to access the host element, Renderer2 to manipulate the DOM safely, and HostListener or HostBinding to interact with events or properties of the host element.
+
+Declare the Directive:
+------------------------
+Add the newly created directive to the declarations array of the appropriate Angular module (e.g., AppModule).
+
+Use the Directive:
+------------------
+Apply the directive to HTML elements in your templates using its defined selector. For attribute directives, this means adding it as an attribute to an element. For structural directives, you'll use the asterisk syntax.
+
+
+
+
+
+
 
 @Directive({
   selector: '[appHighlight]'

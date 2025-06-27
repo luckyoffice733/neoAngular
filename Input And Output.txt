@@ -1,0 +1,71 @@
+Sharing Data from Parent Component to Child Component 
+=====================================================
+• We can share the data from parent component to child component using “property binding”. • Assign the value of “parent component’s property” to “child component’s property”, using “property binding”. 
+
+• Set @Input() decorator for the child component’s property to accept value from parent component’s property. You can import “Input” decorator from “@angular/core” package.
+
+Steps:
+• Import “Input”: import { Input } from “@angular/core”; 
+
+• Create data in parent property at parent component: 
+
+class parentcomponent { 
+parentproperty: datatype;
+ … } 
+
+• Pass data from parent property to child property: 
+• Receive data into child property at child component: 
+
+class childcomponent {
+ @Input( ) childproperty : datatype; 
+… }
+
+
+
+From Child To Parent:
+=====================
+Sharing data from a child component to its parent in Angular is achieved using the @Output() decorator and EventEmitter. 
+
+This mechanism allows the child component to emit custom events that the parent component can listen to and react to.
+
+Steps to share data from child to parent using @Output: 
+
+In the Child Component:
+Import Output and EventEmitter: 
+--------------------------------
+In the child component's TypeScript file, import these from @angular/core.
+Ex:
+
+import { Component, Output, EventEmitter } from '@angular/core';
+
+Define an @Output() property: Declare a property decorated with @Output(), and initialize it with a new instance of EventEmitter. The generic type of EventEmitter specifies the type of data that will be emitted.
+
+
+@Output() dataEvent = new EventEmitter<string>(); // Emits a string
+
+Emit the event: When you want to send data to the parent, call the emit() method on your EventEmitter instance, passing the data as an argument. This is typically done within a method triggered by a user action (e.g., a button click).
+
+        sendDataToParent() {
+          this.dataEvent.emit('Hello from child!');
+        }
+
+
+In the Parent Component:
+========================
+
+Include the child component in the parent's template: Use the child component's selector in the parent's HTML template.
+Ex:
+
+<app-child (dataEvent)="receiveDataFromChild($event)"></app-child>
+
+The (dataEvent) syntax binds to the custom event emitted by the child.
+
+receiveDataFromChild($event) calls a method in the parent component and passes the emitted data (available via the $event keyword) as an argument.
+
+Implement the event handler method: In the parent component's TypeScript file, define the method that will handle the emitted event and receive the data.
+TypeScript
+
+        receiveDataFromChild(data: string) {
+          console.log('Data received from child:', data);
+          // You can now use this data in the parent component
+        }

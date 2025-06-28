@@ -1,0 +1,97 @@
+Assignment:
+---------
+Template Driven Form:
+=====================
+
+https://medium.com/@zeeshankhan8838/template-driven-form-in-angular-b80a3ebbcd24
+
+Reactive Forms:
+===============
+https://medium.com/@krishsurya1249/angular-reactive-forms-c3effd9be1f0
+
+
+
+Introduction:
+============
+
+Angular form Validation - Validation is the process of verifying user input. 
+
+- Validation is required to insured that contradictory and unauthorized data is not get stored 
+into the database. 
+
+- Client side validations can be handled by using patterns, regular expressions and 
+functions. 
+
+- Angular provides predefined services to handle validation. - The angular validation services are categories into two types. 
+
+1)Form state validation services. 
+2)Input state validation services. 
+
+
+Form state services:- - 
+
+The form state validation services can verify all input field in a form simultaneously - At the same time and return a Boolean value - The varies form state services are : 
+
+Service        Property 	Description 
+----------     --------		-----------
+ngPristine     pristine         It verifies whether any field in the form have 
+				modified its value with user input its return true 
+				when no field modified.   
+
+
+ngDirty       dirty              It return Boolean true if any one field has been modify
+
+
+
+ngInvalid    invalid            It return true when at least one field is invalid. 
+
+
+ngValid       valid             It return true only when all field are valid. 
+
+ngSubmitted   submitted         It return true only when the form is submitted. 
+
+
+2. Input state validation services : 
+Angular provides predefined services that are used to verify the state of every field individually. 
+
+Service 	Property 	Description 
+-------		--------	------------
+ngTouched 	touched 	It returns true when form element gets focus and the blurred. 
+
+ngUnTouched 	untouched 	It returns true when the input field never focus. 
+
+ngPristine 	pristine 	it return true if field is not modified. 
+
+ngDirty 	dirty 		It return true if field is modify. 
+
+ngInvalid 	invalid 	It return true if field is invalid.  
+
+ngValid 	valid 		It return true if field is valid. 
+
+ngSubmitted 	submitted 	It return true only when the form is submitted. 
+
+errors 		errors 		It is an input field object that contains collection of 
+				error properties. That are used to verify specific error in the field.
+
+
+Angular Built-in validation CSS classes. 
+- Angular provides a set of “predefined” CSS classes for validation.
+
+- The built-in classes can identify the state and apply effects automatically to any specified 
+element. 
+
+- The built in classes doesn’t have any predefined effects you have to configure the effects 
+manually [explicitly] 
+- The angular CSS classes are : 
+
+Class name 	Description  
+----------	-----------
+.ng-valid       Applies effect when the input state is valid. 
+.ng-invalid     Applies effect when input state is invalid 
+.ng-pristine     Applies effect when the input field not yet modified. 
+.ng-dirty        Applies effect when input field is modify. 
+.ng-touched      Applies effect when input field touched. 
+.ng-untouched    Applies effect when input field untouched.
+
+
+

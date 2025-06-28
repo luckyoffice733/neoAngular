@@ -1,0 +1,20 @@
+• Create routes: 
+var variable1 : Routes = [ 
+{ path: “path here”, component: ComponentClassName }, 
+{ path: “path here”, component: ComponentClassName }, 
+…. 
+]; 
+• Import “RouterModule” from “@angular/router” package: 
+Import { RoutesModule} from “@angular/router”; 
+• Combine “your routes” and “RouterModule”: 
+var variable2 = RouterModule.forRoot(variable1, { useHash: true/false } ); 
+• Import both “routes” and “RouterModule” in “AppModule”: 
+@NgModule( { …, imports: [ …, variable2 ] } ) 
+class AppModule( ) 
+{ 
+} 
+• Create hyperlink to route: 
+<a routerLink=”/path”>Link text</a> 
+• Create placeholder to display route content: 
+<router-outlet> 
+</router-outlet> 

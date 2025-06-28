@@ -1,0 +1,15 @@
+*ngFor properties and Methods:
+
+Member Type           Description 
+-----------           ------------
+index Number - 	It returns iterator element index number starting with zero 
+
+first Boolean - It returns true if the element in iteration is the first item 
+
+last Boolean - It returns true if the element in iteration is the last item 
+
+even Boolean  - It returns true if the item present at even occurrence 
+
+odd Boolean - It returns true if item present at odd occurrence 
+
+trackby Function  - It uses a function that verify changes in the iteration and allow the 			itration only when changes occurance  

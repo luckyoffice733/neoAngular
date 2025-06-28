@@ -1,0 +1,26 @@
+Reference Names 
+• Reference names are used to access specific instance of the element in the template or content. 
+• You can create the reference name by writing “#” and followed by reference name in the template. 
+• You can access the element by specifying its reference name in the @ViewChild or @ContentChild decorator. 
+Syntax: 
+• Create reference name: 
+<tag #referencename>   </tag> 
+
+
+ElementRef 
+============
+• ElementRef represents a specific normal tag (not component) in the template / content. 
+• You can create the reference name by writing “#” and followed by reference name in the template. 
+• You can access the element by specifying its reference name in the @ViewChild or @ContentChild 
+decorator. 
+Syntax: 
+• Create reference name: 
+<tag #referencename> </tag>
+
+• Access the element 
+class parentcomponent 
+{ 
+ @ViewChild(“referencename”)  propertyname: ElementRef; 
+
+ … 
+} 

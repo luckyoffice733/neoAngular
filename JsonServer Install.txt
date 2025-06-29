@@ -1,0 +1,11 @@
+JSON server:
+
+Open a terminal => cd angularapp
+
+To install json server => npm install json-server@0.16.3
+
+To run the server => npx json-server --watch db.json --port 3001
+
+
+
+The default URL format is "https://ide-<unique_project_string>.project.examly.io/proxy/3001/" , where <unique_project_string> varies for each project. You can find and copy the updated string from the README.md file in the workspace directory.
